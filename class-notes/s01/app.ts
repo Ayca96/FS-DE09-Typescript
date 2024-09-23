@@ -35,3 +35,11 @@ usernames.push("Ayse")
 
 let surnames : string [] = [];
 surnames.push("Harold")
+surnames.push("25")
+
+// type declaration 2.yol
+
+let nums2 : Array <number> = [5,6]
+
+console.log(surnames);
+
