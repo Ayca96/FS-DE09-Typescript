@@ -151,5 +151,44 @@ let myArr = [
 
 myArr.push({username:"asda", department:"IT", salary:6000})
 
-const myArr2 = [...myArr, ...users]
+const myArr2 = [...myArr, ...users] // myArr | IUser iki tipide birlestirmis oldu.
 // myArr2.push(5)
+
+//! Generics  
+
+interface Auth {
+  id:number;
+  username:string;
+
+}
+
+
+interface Category {
+  id:number;
+  title:string;
+
+}
+
+interface Post {
+  id:number;
+  title:string;
+  content:string;
+  createdAt:Date;
+  extra: Auth[] | Category[]
+}
+
+interface PostBetter<T> {
+  id:number;
+  title:string;
+  content:string;
+  createdAt:Date;
+  extra: T[]
+}
+
+const testGenerics : PostBetter<string> = {
+  id:1,
+  title:"saada",
+  content:"afsdfsaf",
+  createdAt: new Date(),
+  extra: ["eafasf", "safds","fdsag"]
+}
