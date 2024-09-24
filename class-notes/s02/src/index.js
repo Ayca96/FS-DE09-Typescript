@@ -73,3 +73,17 @@ const testGenerics = {
     createdAt: new Date(),
     extra: ["eafasf", "safds", "fdsag"]
 };
+const testGenerics2 = {
+    id: 1,
+    title: "saada",
+    content: "afsdfsaf",
+    createdAt: new Date(),
+    extra: [5, 7, 8]
+};
+const testGenerics3 = {
+    id: 1,
+    title: "saada",
+    content: "afsdfsaf",
+    createdAt: new Date(),
+    extra: [{ id: 5, title: "sfad" }]
+};

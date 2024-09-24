@@ -156,6 +156,7 @@ const myArr2 = [...myArr, ...users] // myArr | IUser iki tipide birlestirmis old
 
 //! Generics  
 
+//*generic kullanmadan 
 interface Auth {
   id:number;
   username:string;
@@ -177,12 +178,13 @@ interface Post {
   extra: Auth[] | Category[]
 }
 
+//* generic kullanarak
 interface PostBetter<T> {
   id:number;
   title:string;
   content:string;
   createdAt:Date;
-  extra: T[]
+  extra: T[]  // bedeutet > string [] 
 }
 
 const testGenerics : PostBetter<string> = {
@@ -191,4 +193,20 @@ const testGenerics : PostBetter<string> = {
   content:"afsdfsaf",
   createdAt: new Date(),
   extra: ["eafasf", "safds","fdsag"]
+}
+
+const testGenerics2 : PostBetter<number> = {
+  id:1,
+  title:"saada",
+  content:"afsdfsaf",
+  createdAt: new Date(),
+  extra: [5,7,8]
+}
+
+const testGenerics3 : PostBetter<{id:number, title:string}> = {
+  id:1,
+  title:"saada",
+  content:"afsdfsaf",
+  createdAt: new Date(),
+  extra: [{id:5, title: "sfad"}]
 }
