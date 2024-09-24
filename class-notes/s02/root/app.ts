@@ -30,6 +30,7 @@ tasks.forEach((item, index) =>{
 const li = document.createElement("li");
 li.textContent = item.task;
 li.classList.add(item.status === Status.Completed ? "completed" : "active")
+li.addEventListener ("click", ()=> toggleToDo(index))
 list.appendChild(li)
 
 })
@@ -48,3 +49,7 @@ addBtn.addEventListener("click", ()=>{
   }
 })
 
+const toggleToDo =(index:number) =>{
+tasks[index].status = tasks[index].status=== Status.Active ? Status.Completed : Status.Active
+updateList()
+}
