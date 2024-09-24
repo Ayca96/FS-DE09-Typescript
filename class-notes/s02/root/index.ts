@@ -69,6 +69,36 @@ const user1 : IUser = {
     
   }
 
+}
 
+// interface IAdminUser {
+//   username: string;
+//   firstName:string;
+//   age:number;
+//   getName : () => void;
+//   isAdmin:boolean;
+//   password:string;
+// }
+// interface IManagerUser {
+//   username: string;
+//   firstName:string;
+//   age:number;
+//   getName : () => void;
+//   isAdmin:boolean;
+//   password:string;
+// }
 
+interface IAdminUser2 extends IUser {
+  isAdmin:boolean;
+  password:string;
+}
+
+const adminUser : IAdminUser2 = {
+  username: "admin",
+  firstName:"admin",
+  age:30,
+  isAdmin:true,
+  password:"1234",
+  getName : () =>console.log("admin"),
+  
 }
