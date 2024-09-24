@@ -11,3 +11,20 @@ const person3 = {
     city: "Samsun",
     isActive: true
 };
+const redCar = {
+    model: "X5",
+    year: new Date(),
+    price: 3000,
+    color: "red",
+    getName: () => {
+        return "X5";
+    }
+};
+const user1 = {
+    username: "Ayca",
+    firstName: "Ayca",
+    age: 28,
+    getName: () => {
+        return 5;
+    }
+};

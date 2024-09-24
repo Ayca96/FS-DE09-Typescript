@@ -51,3 +51,24 @@ const redCar : ICar = {
   return "X5"
   }
 }
+
+interface IUser {
+  username: string;
+  firstName:string;
+  age:number;
+  getName : () => void; // fonksiyon deger döndürmüyor void yazdigimiz icin. return yapmayacak. Yukardaki fonksiyonda return yazmayinca fonksiyon calismiyor altini ciziyor void te öyle olmuyor zaten fonk calismiyor.
+
+}
+
+const user1 : IUser = {
+  username:"Ayca",
+  firstName:"Ayca",
+  age:28,
+  getName : () =>{
+    console.log("5");
+    
+  }
+
+
+
+}
