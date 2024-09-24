@@ -1,6 +1,6 @@
 const input = document.getElementById("todoInput") as HTMLInputElement;
 
-const addBtn = document.getElementById("addToDoBtn") as HTMLButtonElement;
+const addBtn = document.getElementById("addTodoBtn") as HTMLButtonElement;
 
 const list = document.getElementById("todoList") as HTMLUListElement;
 
@@ -26,6 +26,9 @@ addBtn.addEventListener("click", ()=>{
   const newTask = input.value.trim() // input string oldugu icin string methodlari cikti ve otomatik newTask te string sayiliyor.
   if(newTask){
     tasks.push({task:newTask, status:Status.Active})
+    console.log(tasks);
+    input.value ="";
+    
   }
 })
 
