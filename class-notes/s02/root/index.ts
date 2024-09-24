@@ -102,3 +102,7 @@ const adminUser : IAdminUser2 = {
   getName : () =>console.log("admin"),
   
 }
+
+
+console.log(adminUser);
+

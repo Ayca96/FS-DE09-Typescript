@@ -25,6 +25,15 @@ const user1 = {
     firstName: "Ayca",
     age: 28,
     getName: () => {
-        return 5;
+        console.log("5");
     }
 };
+const adminUser = {
+    username: "admin",
+    firstName: "admin",
+    age: 30,
+    isAdmin: true,
+    password: "1234",
+    getName: () => console.log("admin"),
+};
+console.log(adminUser);
