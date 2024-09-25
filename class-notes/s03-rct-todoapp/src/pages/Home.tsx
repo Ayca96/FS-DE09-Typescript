@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import AddTodoComp from "../components/AddTodoComp";
-import TodoList from "../TodoList";
+import TodoList from "../components/TodoList";
 import { Container } from "@mui/material";
 import axios from "axios";
+import TodoListItem from "../components/TodoListItem";
 
 const url = "https://634ac3fc5df952851418480f.mockapi.io/api/todos";
 
@@ -70,7 +71,7 @@ const addTodo: AddFn = async (text)=>{
     <Container>
       <Header />
       <AddTodoComp addTodo={addTodo}/>
-      <TodoList />
+      <TodoList todos = {todos}/>
     </Container>
   );
 };
