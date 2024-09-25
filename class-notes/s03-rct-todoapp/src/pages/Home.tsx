@@ -67,11 +67,36 @@ const addTodo: AddFn = async (text)=>{
  getTodos()
  },[])
 
+
+
+ const toggleTodo:ToggleFn = async(todo)=> {
+  try {
+    await axios.put(`${url}/${todo.id}`, {...todo, isDone:!todo.isDone})
+  } catch (error) {
+    console.log(error);
+    
+  }finally{
+    getTodos()
+  }
+ }
+
+ const deleteTodo:DeleteFn = async(id)=> {
+  try {
+    await axios.delete(`${url}/${id}`)
+  } catch (error) {
+    console.log(error);
+    
+  }finally{
+    getTodos()
+  }
+ }
+
+
   return (
     <Container>
       <Header />
       <AddTodoComp addTodo={addTodo}/>
-      <TodoList todos = {todos}/>
+      <TodoList todos = {todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     </Container>
   );
 };

@@ -3,12 +3,16 @@ import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 import TodoListItem from "./TodoListItem";
-import "./todolist.css"
+import "./todolist.css";
 
-interface ITodoList {
+// interface ITodoList {
+//   todos: ITodoType[];
+//   toggleTodo: ToggleFn;
+//   deleteTodo:DeleteFn
+// }
+interface ITodoList extends ITodoListFn {
   todos: ITodoType[];
 }
-
 //! 3. Kullanım yolu props type
 //! React.FC, bir functional component'i ifade eder. Bileşenin işlevsel bir yapıda olduğunu ve React tarafından kullanılabileceğini belirtir.
 
@@ -16,7 +20,7 @@ interface ITodoList {
 
 //* Ancak, React.FC kullanmak zorunlu değildir. Fonksiyonel bir bileşen, sadece fonksiyon olarak da tanımlanabilir ve React.FC kullanmadan da props alabilir ve JSX döndürebilir.
 
-const TodoList: React.FC<ITodoList> = ({ todos }) => {
+const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
   const progressTodos = todos.filter((todo) => !todo.isDone); //* tamamlanmayan taskler
   const completedTodos = todos.filter((todo) => todo.isDone); //? tamamlanan taskler
 
@@ -52,7 +56,14 @@ const TodoList: React.FC<ITodoList> = ({ todos }) => {
           InProgress Todos
         </Typography>
         {progressTodos.length ? (
-          progressTodos.map((todo) => <TodoListItem />)
+          progressTodos.map((todo) => (
+            <TodoListItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))
         ) : (
           <Typography color="error" mt={3}>
             No InProgress Todos
@@ -80,7 +91,14 @@ const TodoList: React.FC<ITodoList> = ({ todos }) => {
           Completed Todos
         </Typography>
         {completedTodos.length ? (
-          completedTodos.map((todo) => <TodoListItem />)
+          completedTodos.map((todo) => (
+            <TodoListItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))
         ) : (
           <Typography color="error" mt={3}>
             No Completed Todos
