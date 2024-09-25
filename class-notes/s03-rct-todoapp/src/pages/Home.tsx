@@ -30,8 +30,28 @@ const Home = () => {
     
   }
  }
+//! 1. Yol 
+//  const addTodo = async (text:string)=>{
+//   try {
+//      await axios.post(url,{task:text, isDone:false})
+//      getTodos()
+//   } catch (error) {
+//     console.log(error);
+    
+//   }
+  
+//  }
 
- const addTodo = async (text:string)=>{
+//  useEffect(()=>{
+//  getTodos()
+//  },[])
+
+
+//!2. Yol 
+
+// type AddFn = (text:string)=> Promise <void>
+
+const addTodo: AddFn = async (text)=>{
   try {
      await axios.post(url,{task:text, isDone:false})
      getTodos()
