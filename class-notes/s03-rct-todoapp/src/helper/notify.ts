@@ -10,6 +10,8 @@ export const notify = (msg:string,icon:SweetAlertIcons) =>Swal.fire({
 title:"Todo App",
 text: msg,
 icon:icon,
-confirmButtonText:"Ok"
+confirmButtonText:"Ok",
+timer:3000,
+timerProgressBar:true
 
 })
