@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <Nav>
       <Logo onClick={()=>setIsOpen(false)} to="/home"> 
-        <i>{`<Anthony/>`}</i>
+        <i data-test="homeLogo">{`<Anthony/>`}</i>
         <span data-test="loginHeader">recipe</span>
         
       </Logo>
